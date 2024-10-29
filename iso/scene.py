@@ -5,6 +5,11 @@ class Scene:
         self.sprites = []
 
     
+    # game.Updateable interface implementation
+    def update(self, clock):
+        for sprite in self.sprites:
+            sprite.update(clock)
+
     def addSprite(self, sprite):
         self.sprites.append(sprite)
 
@@ -13,3 +18,4 @@ class Scene:
 
     def getSprites(self) -> list:
         return self.sprites
+    
